@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section id="main-bg">
+        <header>
+            <div class="header-left">
+                <img src="https://www.shutterstock.com/image-vector/green-check-mark-sign-tick-260nw-1535035217.jpg"
+                    alt="img">
+                <select name="drop-down" id="drop-down">
+                    <option value="alllists" selected>All lists <i class="fa-solid fa-angle-down"
+                            style="margin-left: 8px;"></i></option>
+                    <option value="default"> Default </option>
+                    <option value="finished"> finished</option>
+                </select>
+            </div>
+
+            <div class="header-right">
+                <search>
+                    <i class="fa-brands fa-sistrix"></i>
+                    <input type="text" placeholder="Search...">
+                </search>
+
+                <div id="menu">
+                    <i class="fa-solid fa-ellipsis-vertical menu-open"></i>
+                    <i class="fa-solid fa-xmark menu-close"></i>
+
+                    <div class="sidebar">
+                        <ul>
+                            <li><a href="#">Task List</a></li>
+                            <li><a href="#">Add in Batch Mode</a></li>
+                            <li><a href="#">Remove App</a></li>
+                            <li><a href="#">More App</a></li>
+                            <li><a href="#">Follow Us</a></li>
+                            <li><a href="#">Send feedback</a></li>
+                            <li><a href="#">Invite friend to the App</a></li>
+                            <li><a href="#">Setting</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+        <div class="shedules">
+            <ul>
+                <li id="list"></li>
+            </ul>
+        </div>
+        <div class="addaList">
+            <i class="fa-chisel fa-regular fa-plus"></i>
+        </div>
+
+        <footer>
+            <i class="fa-solid fa-microphone-lines"></i>
+            <input type="text"  placeholder="Add New Task">
+        </footer>
+    </section>
+
+
+
+
+
+    
+    <script>
+        const openIcon = document.querySelector(".menu-open");
+        const closeIcon = document.querySelector(".menu-close");
+        const sidebar = document.querySelector(".sidebar");
+
+        openIcon.addEventListener("click", () => {
+            sidebar.classList.add("active");
+            openIcon.style.display = "none";
+            closeIcon.style.display = "block";
+        });
+
+        closeIcon.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+            openIcon.style.display = "block";
+            closeIcon.style.display = "none";
+        });
+
+    </script>
+</body>
+
+</html>
